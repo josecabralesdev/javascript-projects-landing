@@ -12,14 +12,14 @@ interface ProjectCardProps {
   featured?: boolean;
 }
 
-const ProjectCard = ({ 
-  title, 
-  description, 
-  technologies, 
-  image, 
-  demoUrl, 
-  githubUrl, 
-  featured = false 
+const ProjectCard = ({
+  title,
+  description,
+  technologies,
+  image,
+  demoUrl,
+  githubUrl,
+  featured = false
 }: ProjectCardProps) => {
   return (
     <Card className={`
@@ -27,17 +27,7 @@ const ProjectCard = ({
       hover:border-primary/30 transition-all duration-500 hover:shadow-hover
       ${featured ? 'md:col-span-2 animate-glow-pulse' : ''}
     `}>
-      {/* Project Image */}
-      {image && (
-        <div className="aspect-video overflow-hidden bg-secondary/20">
-          <img 
-            src={image} 
-            alt={title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-          />
-        </div>
-      )}
-      
+
       {/* Content */}
       <div className="p-6">
         <div className="flex items-center gap-2 mb-3">
@@ -50,15 +40,15 @@ const ProjectCard = ({
             </span>
           )}
         </div>
-        
+
         <p className="text-muted-foreground mb-4 leading-relaxed">
           {description}
         </p>
-        
+
         {/* Technologies */}
         <div className="flex flex-wrap gap-2 mb-6">
           {technologies.map((tech, index) => (
-            <span 
+            <span
               key={index}
               className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-full 
                        border border-border/50 hover:border-primary/30 transition-colors duration-300"
@@ -67,13 +57,13 @@ const ProjectCard = ({
             </span>
           ))}
         </div>
-        
+
         {/* Actions */}
         <div className="flex gap-3">
           {demoUrl && (
-            <Button 
-              variant="default" 
-              size="sm" 
+            <Button
+              variant="default"
+              size="sm"
               asChild
               className="flex-1 shadow-glow/50"
             >
@@ -83,11 +73,11 @@ const ProjectCard = ({
               </a>
             </Button>
           )}
-          
+
           {githubUrl && (
-            <Button 
-              variant="outline" 
-              size="sm" 
+            <Button
+              variant="outline"
+              size="sm"
               asChild
               className="flex-1 border-primary/30 hover:border-primary hover:bg-primary/10"
             >
